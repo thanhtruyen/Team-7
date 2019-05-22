@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/title"/>
+    <LinearLayout
+        android:paddingTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên Sách: "
+            android:textStyle="bold"
+            />
+
+        <EditText
+            style="@style/txtNhap"
+            android:id="@+id/tensach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:hint="Nhập Tên Sách" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tác Giả:    "
+            android:textStyle="bold"/>
+
+        <EditText
+            style="@style/txtNhap"
+            android:id="@+id/tentg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:hint="Nhập Tác Giả" />
+    </LinearLayout>
+<RadioGroup
+    style="@style/checkbox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RadioButton
+        android:id="@+id/rbtn_vanhoc"
+       style="@style/rbtChu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Truyện"/>
+    <RadioButton
+        android:id="@+id/rbtn_truyen"
+        style="@style/rbtChu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thơ"/>
+    <RadioButton
+        android:id="@+id/rbtn_khac"
+        style="@style/rbtChu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Khác"
+        />
+</RadioGroup>
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/nutbam"
+            android:id="@+id/btnThem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:text="Thêm" />
+
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>
