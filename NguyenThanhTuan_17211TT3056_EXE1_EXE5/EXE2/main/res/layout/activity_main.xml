@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+        <tdc.edu.vn.myapplication.DrawingView
+            android:layout_width="match_parent"
+            android:id="@+id/drawing"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="1">
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/btnTop"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_upward_black_24dp"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBot"
+            android:background="@drawable/ic_arrow_downward_black_24dp"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnPre"
+            android:background="@drawable/ic_arrow_back_black_24dp"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnNext"
+            android:background="@drawable/ic_arrow_forward_black_24dp"></Button>
+
+    </LinearLayout>
+
+</LinearLayout>
