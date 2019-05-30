@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_theloai"
+            android:icon="@drawable/ic_collections_black_24dp"
+            android:title="Thể loại" />
+        <item
+            android:id="@+id/nav_truyenhot"
+            android:icon="@drawable/ic_whatshot_black_24dp"
+            android:title="Truyện hot" />
+        <item
+            android:id="@+id/nav_theodoi"
+            android:icon="@drawable/ic_stars_black_24dp"
+            android:title="Truyện theo dõi" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_gioithieu"
+                android:icon="@drawable/ic_supervisor_account_black_24dp"
+                android:title="Giới thiệu" />
+            <item
+                android:id="@+id/nav_lienhe"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="Setting" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

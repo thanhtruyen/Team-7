@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Gánh team 15gg</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="favorite">Yêu Thích</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+
+    <string-array name="pref_font_size_list_titles">
+        <item>10dp</item>
+        <item>12dp</item>
+        <item>14dp</item>
+        <item>16dp</item>
+        <item>18dp</item>
+        <item>20dp</item>
+        <item>22dp</item>
+        <item>24dp</item>
+        <item>26dp</item>
+        <item>30dp</item>
+    </string-array>
+    <string-array name="pref_font_size_list_values">
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>22</item>
+        <item>24</item>
+        <item>26</item>
+        <item>30</item>
+    </string-array>
+
+</resources>

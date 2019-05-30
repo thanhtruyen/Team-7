@@ -60,7 +60,7 @@ public class SettingsActivity extends PreferenceActivity  {
                 preference.setDefaultValue(false);
                 boolean isCheck = (Boolean) newValue;
                 Toast.makeText(getApplicationContext(),String.valueOf(isCheck), Toast.LENGTH_SHORT);
-                if(isCheck && !player.isPlaying()){
+                if(isCheck){
                     player.start();
                 }
                 else{

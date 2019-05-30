@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,8 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity
     ArrayList<Comic> arr;
     GridView gridView;
     ListAdapter adapter=null;
+    EditText search;
+    MyAppDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         gridView = (GridView) findViewById(R.id.girdview1);
+        search = (EditText) findViewById(R.id.search);
     }
 
     private void setAdapter() {
@@ -66,7 +72,7 @@ public class MainActivity extends AppCompatActivity
     private void createData() {
         arr = new ArrayList<>();
         //create default data
-        MyAppDatabase db = new MyAppDatabase(this);
+        db = new MyAppDatabase(this);
         db.createDefaultComic();
         db.createDefaultChuong();
         db.createDefaultCategory();
@@ -83,6 +89,24 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        search.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Perform action on key press
+                    Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name", search.getText().toString());
+                    intent.putExtra("package",bundle);
+                    startActivity(intent);
+                    overridePendingTransition(0,0);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override

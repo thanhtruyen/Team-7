@@ -164,6 +164,37 @@ public class MyAppDatabase extends SQLiteOpenHelper {
         return comic;
     }
 
+    public ArrayList<Comic> getComicsByName(String name) {
+        Log.i(TAG, "MyDatabaseHelper.getAllComics ... ");
+
+        ArrayList<Comic> comicList = new ArrayList<Comic>();
+        // Select All Query
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.query(TABLE_COMIC, new String[]{COLUMN_COMIC_ID,
+                        COLUMN_COMIC_NAME, COLUMN_COMIC_THUMBNAIL, COLUMN_COMIC_SUMMARY}, COLUMN_COMIC_NAME + " LIKE ?",
+                new String[] { "%" + name + "%" }, null, null, null, null);
+
+
+        // Duyệt trên con trỏ, và thêm vào danh sách.
+        if (cursor.moveToFirst()) {
+            do {
+                Comic comic = new Comic();
+                comic.setId(Integer.parseInt(cursor.getString(0)));
+                comic.setTenTruyen(cursor.getString(1));
+                comic.setBiaTruyen(Integer.parseInt(cursor.getString(2)));
+                comic.setTomTat(cursor.getString(3));
+                Log.i(TAG, "MyDatabaseHelper.getAllComics ... " + comic.getTenTruyen());
+                // Thêm vào danh sách.
+                comicList.add(comic);
+            } while (cursor.moveToNext());
+        }
+
+        // return Comic list
+        return comicList;
+    }
+
     public ArrayList<Comic> getAllComics() {
         Log.i(TAG, "MyDatabaseHelper.getAllComics ... ");
 
